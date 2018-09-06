@@ -1,0 +1,26 @@
+{
+  "name": "@danielhusar/babel-plugin-react-add-a11y-props",
+  "version": "1.0.0",
+  "description": "Add accesibility props to react elements when there is onClick handler on them",
+  "scripts": {
+    "test": "jest"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "author": "Daniel Husar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielhusar/babel-plugin-react-add-a11y-props.git"
+  },
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-transform-react-createelement-to-jsx": "^1.0.1",
+    "jest": "^23.5.0",
+    "prettier": "1.14.2"
+  }
+}

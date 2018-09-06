@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-add-a11y-props add onKeyUp, tabindex and role to all elements with onClick 1`] = `
+"<React.Fragment>
+  <span onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} tabIndex=\\"0\\" role=\\"button\\" />
+  <div onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} tabIndex=\\"0\\" role=\\"button\\" />
+  <article onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} tabIndex=\\"0\\" role=\\"button\\" />
+  <a onClick={() => foo()} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && (() => foo())(e)} tabIndex=\\"0\\" role=\\"button\\" />
+</React.Fragment>;
+"
+`;
+
+exports[`react-add-a11y-props it will not add keyUp and role to anchor with href 1`] = `
+"<a href=\\"https://www.google.com\\" onClick={cb} tabIndex=\\"0\\" />;
+"
+`;
+
+exports[`react-add-a11y-props it will not add keyUp if its already present 1`] = `
+"<div onKeyUp={cb} onClick={cb} tabIndex=\\"0\\" role=\\"button\\" />;
+"
+`;
+
+exports[`react-add-a11y-props it will not add role if its already present 1`] = `
+"<div role=\\"foo\\" onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} tabIndex=\\"0\\" />;
+"
+`;
+
+exports[`react-add-a11y-props it will not add tabIndex and keyUp for negative tabIndex 1`] = `
+"<div tabIndex=\\"-1\\" onClick={cb} />;
+"
+`;
+
+exports[`react-add-a11y-props it will not add tabIndex if its already present 1`] = `
+"<div tabIndex=\\"1\\" onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} role=\\"button\\" />;
+"
+`;
+
+exports[`react-add-a11y-props it will only add tabindex to inputs and will not add keyUp and role 1`] = `
+"<React.Fragment>
+  <input type=\\"submit\\" onClick={cb} tabIndex=\\"0\\" />
+  <button onClick={cb} tabIndex=\\"0\\" />
+  <select onClick={() => foo()} tabIndex=\\"0\\" />
+</React.Fragment>;
+"
+`;
