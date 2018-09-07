@@ -12,7 +12,7 @@
   "author": "Daniel Husar",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danielhusar/babel-plugin-react-add-a11y-props.git"
+    "url": "git+https://github.com/danielhusar/babel-plugin-react-add-a11y-props.git"
   },
   "keywords": [
     "babel",
@@ -29,5 +29,9 @@
     "babel-plugin-transform-react-createelement-to-jsx": "^1.0.1",
     "jest": "^23.5.0",
     "prettier": "1.14.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/danielhusar/babel-plugin-react-add-a11y-props/issues"
+  },
+  "homepage": "https://github.com/danielhusar/babel-plugin-react-add-a11y-props#readme"
 }
