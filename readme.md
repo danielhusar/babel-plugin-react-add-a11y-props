@@ -75,6 +75,8 @@ Add `@daniel.husar/babel-plugin-react-add-a11y-props` to your plugins array in `
 ## Disclaimer
 The event passed into the onClick callback from keyUp event is not click but keyboard event which is sligtly different so you should account for both.
 
+Right now this plugin will not take into account `onClick` added via spread objects.
+
 ## License
 
 MIT © [Daniel Husar](https://github.com/danielhusar)
