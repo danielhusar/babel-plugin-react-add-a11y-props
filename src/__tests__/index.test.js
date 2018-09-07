@@ -10,6 +10,9 @@ const format = jsx => {
   return prettier.format(code, { printWidth: 300, parser: 'babylon' });
 };
 
+// babel-plugin-transform-react-createelement-to-jsx have some deprecated calls, so silent them until it upgrades
+console.error = jest.fn();
+
 describe('react-add-a11y-props', () => {
   it('add onKeyUp, tabindex and role to all elements with onClick', () => {
     const jsx = `
