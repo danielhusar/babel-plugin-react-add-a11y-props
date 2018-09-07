@@ -9,7 +9,6 @@ module.exports = function({ types: t, template }) {
 
       const elementName = path.container.openingElement.name.name;
       const attributes = path.container.openingElement.attributes;
-      const newAttributes = [];
 
       const isHtmlElement = [...elementName][0].match(/[a-z]/);
       if (!isHtmlElement) return;
@@ -31,18 +30,16 @@ module.exports = function({ types: t, template }) {
         const ast = template('(e) => (e.keyCode === 13 || e.keyCode === 32) && (CALLBACK)(e)')({
           CALLBACK: haveOnClick.value.expression,
         });
-        newAttributes.push(t.jSXAttribute(t.jSXIdentifier('onKeyUp'), t.JSXExpressionContainer(ast.expression)));
+        attributes.push(t.jSXAttribute(t.jSXIdentifier('onKeyUp'), t.JSXExpressionContainer(ast.expression)));
       }
 
       if (addRole) {
-        newAttributes.push(t.jSXAttribute(t.jSXIdentifier('role'), t.stringLiteral('button')));
+        attributes.push(t.jSXAttribute(t.jSXIdentifier('role'), t.stringLiteral('button')));
       }
 
       if (addTabIndex) {
-        newAttributes.push(t.jSXAttribute(t.jSXIdentifier('tabIndex'), t.stringLiteral('0')));
+        attributes.push(t.jSXAttribute(t.jSXIdentifier('tabIndex'), t.stringLiteral('0')));
       }
-
-      attributes.push(...newAttributes);
     },
   };
 
