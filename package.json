@@ -14,6 +14,13 @@
     "type": "git",
     "url": "https://github.com/danielhusar/babel-plugin-react-add-a11y-props.git"
   },
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "react",
+    "accesibility",
+    "a11y"
+  ],
   "license": "MIT",
   "private": false,
   "devDependencies": {
