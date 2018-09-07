@@ -2,10 +2,10 @@
 
 exports[`react-add-a11y-props add onKeyUp, tabindex and role to all elements with onClick 1`] = `
 "<React.Fragment>
-  <span onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} tabIndex=\\"0\\" role=\\"button\\" />
-  <div onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} tabIndex=\\"0\\" role=\\"button\\" />
-  <article onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} tabIndex=\\"0\\" role=\\"button\\" />
-  <a onClick={() => foo()} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && (() => foo())(e)} tabIndex=\\"0\\" role=\\"button\\" />
+  <span onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} role=\\"button\\" tabIndex=\\"0\\" />
+  <div onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} role=\\"button\\" tabIndex=\\"0\\" />
+  <article onClick={cb} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && cb(e)} role=\\"button\\" tabIndex=\\"0\\" />
+  <a onClick={() => foo()} onKeyUp={e => (e.keyCode === 13 || e.keyCode === 32) && (() => foo())(e)} role=\\"button\\" tabIndex=\\"0\\" />
 </React.Fragment>;
 "
 `;
@@ -16,7 +16,7 @@ exports[`react-add-a11y-props it will not add keyUp and role to anchor with href
 `;
 
 exports[`react-add-a11y-props it will not add keyUp if its already present 1`] = `
-"<div onKeyUp={cb} onClick={cb} tabIndex=\\"0\\" role=\\"button\\" />;
+"<div onKeyUp={cb} onClick={cb} role=\\"button\\" tabIndex=\\"0\\" />;
 "
 `;
 

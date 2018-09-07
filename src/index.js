@@ -23,23 +23,23 @@ module.exports = function({ types: t, template }) {
       const isAnchorWithHref = elementName === 'a' && attributes.find(attr => attr.name && attr.name.name.toLowerCase() === 'href');
       const isElementFromNativeList = ELEMENTS_WITH_NATIVE_KEY_DOWN.includes(elementName);
 
-      const addTabIndex = !haveTabIndex;
-      const addKeyDown = !haveKeyUp && !isAnchorWithHref && !isElementFromNativeList && !haveNegativeTabIndex;
+      const addKeyUp = !haveKeyUp && !isAnchorWithHref && !isElementFromNativeList && !haveNegativeTabIndex;
       const addRole = !haveRole && !isAnchorWithHref && !isElementFromNativeList && !haveNegativeTabIndex;
+      const addTabIndex = !haveTabIndex;
 
-      if (addKeyDown) {
+      if (addKeyUp) {
         const ast = template('(e) => (e.keyCode === 13 || e.keyCode === 32) && (CALLBACK)(e)')({
           CALLBACK: haveOnClick.value.expression,
         });
         newAttributes.push(t.jSXAttribute(t.jSXIdentifier('onKeyUp'), t.JSXExpressionContainer(ast.expression)));
       }
 
-      if (addTabIndex) {
-        newAttributes.push(t.jSXAttribute(t.jSXIdentifier('tabIndex'), t.stringLiteral('0')));
-      }
-
       if (addRole) {
         newAttributes.push(t.jSXAttribute(t.jSXIdentifier('role'), t.stringLiteral('button')));
+      }
+
+      if (addTabIndex) {
+        newAttributes.push(t.jSXAttribute(t.jSXIdentifier('tabIndex'), t.stringLiteral('0')));
       }
 
       attributes.push(...newAttributes);
