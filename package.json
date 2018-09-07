@@ -1,5 +1,5 @@
 {
-  "name": "@danielhusar/babel-plugin-react-add-a11y-props",
+  "name": "@daniel.husar/babel-plugin-react-add-a11y-props",
   "version": "1.0.0",
   "description": "Add accesibility props to react elements when there is onClick handler on them",
   "scripts": {

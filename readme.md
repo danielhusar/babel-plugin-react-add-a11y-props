@@ -7,13 +7,13 @@
 ## Install
 
 ```sh
-npm install --save-dev @danielhusar/babel-plugin-react-add-a11y-props
-yarn add @danielhusar/babel-plugin-react-add-a11y-props --dev
+npm install --save-dev @daniel.husar/babel-plugin-react-add-a11y-props
+yarn add @daniel.husar/babel-plugin-react-add-a11y-props --dev
 ```
 
 ## Usage
 
-Add `@danielhusar/babel-plugin-react-add-a11y-props` to your plugins array in `.babelrc`
+Add `@daniel.husar/babel-plugin-react-add-a11y-props` to your plugins array in `.babelrc`
 
 
 ## See the examples for what cames in and out:
