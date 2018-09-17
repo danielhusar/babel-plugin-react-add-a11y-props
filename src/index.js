@@ -1,4 +1,4 @@
-const ELEMENTS_WITH_NATIVE_KEY_DOWN = ['button', 'input', 'select'];
+const ELEMENTS_WITH_NATIVE_KEY_DOWN = ['button', 'input', 'select', 'textarea'];
 
 module.exports = function({ types: t, template }) {
   const jsxVisitor = {
