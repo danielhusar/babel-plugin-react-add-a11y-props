@@ -2,8 +2,8 @@
 
 > Add accessibility attributes to react dom elements
 
-This plugin will add `onKeyUp={}`, `role="button"` and `tabIndex="0"` to all html react elements that have onClick handler.
-It will not override those props if they are already defined, and `onKeyUp` will not be added to anchors with href, inputs, buttons and selects.
+This plugin will add `onKeyUp`, `role="button"` and `tabIndex="0"` to all html react elements that have onClick handler.
+It will not override those attributes if they are already defined, and `onKeyUp` will not be added to anchors with href, inputs, buttons and selects.
 `onKeyUp` will fire `onClick` event when pressed enter or space.
 
 ## Install
@@ -18,7 +18,7 @@ yarn add @daniel.husar/babel-plugin-react-add-a11y-props --dev
 Add `@daniel.husar/babel-plugin-react-add-a11y-props` to your plugins array in `.babelrc`
 
 
-## See the examples for what cames in and out:
+## See the examples for what comes in and out:
 
 ### In:
 
