@@ -17,20 +17,20 @@ module.exports = function({ types: t, template }) {
 
       const haveTabIndex = attributes.find(attr => attr.name && attr.name.name.toLowerCase() === 'tabindex');
       const haveNegativeTabIndex = haveTabIndex && haveTabIndex.value.value == -1;
-      const haveKeyUp = attributes.find(attr => attr.name && attr.name.name.toLowerCase() === 'onkeyup');
+      const haveKeyDown = attributes.find(attr => attr.name && attr.name.name.toLowerCase() === 'onkeydown');
       const haveRole = attributes.find(attr => attr.name && attr.name.name.toLowerCase() === 'role');
       const isAnchorWithHref = elementName === 'a' && attributes.find(attr => attr.name && attr.name.name.toLowerCase() === 'href');
       const isElementFromNativeList = ELEMENTS_WITH_NATIVE_KEY_DOWN.includes(elementName);
 
-      const addKeyUp = !haveKeyUp && !isAnchorWithHref && !isElementFromNativeList && !haveNegativeTabIndex;
+      const addKeyDown = !haveKeyDown && !isAnchorWithHref && !isElementFromNativeList && !haveNegativeTabIndex;
       const addRole = !haveRole && !isAnchorWithHref && !isElementFromNativeList && !haveNegativeTabIndex;
       const addTabIndex = !haveTabIndex;
 
-      if (addKeyUp) {
+      if (addKeyDown) {
         const ast = template('(e) => (e.keyCode === 13 || e.keyCode === 32) && (CALLBACK)(e)')({
           CALLBACK: haveOnClick.value.expression,
         });
-        attributes.push(t.jSXAttribute(t.jSXIdentifier('onKeyUp'), t.JSXExpressionContainer(ast.expression)));
+        attributes.push(t.jSXAttribute(t.jSXIdentifier('onKeyDown'), t.JSXExpressionContainer(ast.expression)));
       }
 
       if (addRole) {
